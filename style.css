@@ -7,11 +7,8 @@ body {
     background-attachment: fixed;
     transition: background-color 0.5s ease;
     animation: fanimado 45s infinite;
-<<<<<<< HEAD
-    min-height: 100vh;  /* Garantiza que el fondo cubra siempre al menos el 100% de la ventana */
-=======
     min-height: 100vh;
->>>>>>> fa20f0b7e6ebe4ea19f99714f91f612d8a22b882
+    min-height: 100vh;
 }
 
 button {
