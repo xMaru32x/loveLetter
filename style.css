@@ -6,9 +6,66 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     transition: background-color 0.5s ease;
-    background-size: 120%;
-    animation: fanimado 45s infinite; 
+    animation: fanimado 45s infinite;
+<<<<<<< HEAD
+    min-height: 100vh;  /* Garantiza que el fondo cubra siempre al menos el 100% de la ventana */
+=======
+    min-height: 100vh;
+>>>>>>> fa20f0b7e6ebe4ea19f99714f91f612d8a22b882
 }
+
+button {
+    background-color: crimson;
+    border: 0;
+    border-radius: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    font-size: 18px;
+    padding: 20px 50px;
+    margin-top: 20%;
+  }
+  
+  .modal-container {
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.3);
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    pointer-events: none;
+    opacity: 0;  
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    transition: opacity 0.3s ease;
+    z-index: 10; 
+  }
+  
+  .show {
+    pointer-events: auto;
+    opacity: 1;
+  }
+  
+  .modal {
+    background-color: #fff;
+    width: 300px;
+    max-width: 100%;
+    padding: 60px 35px;
+    border-radius: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    z-index: 11;
+  }
+  
+  .modal h1 {
+    margin: 0;
+    font-size: 45px;
+  }
+  
+  .modal p {
+    opacity: 0.7;
+    font-size: 25px;
+  }
 
 @keyframes animat {
     0% {
