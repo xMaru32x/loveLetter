@@ -24,9 +24,11 @@ Este proyecto consiste en una página web desarrollada con HTML, CSS y JavaScrip
 
 ## Uso
 
-1.- Al cargar la página, verás un contador de tiempo que muestra cuánto falta para la próxima carta.
-2.-Cuando el contador llegue a cero, el texto cambiará y se mostrará un mensaje que dice "Nueva carta en:".
-3.-El usuario puede hacer clic en la carta para obtener el archivo PDF de la carta de amor.
+**1.-** Al cargar la página, verás un contador de tiempo que muestra cuánto falta para la próxima carta.
+
+**2.-** Cuando el contador llegue a cero, el texto cambiará y se mostrará un mensaje que dice "Nueva carta en:".
+
+**3.-** El usuario puede hacer clic en la carta para obtener el archivo PDF de la carta de amor.
 
 ## Licencia
 
