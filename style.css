@@ -1,13 +1,13 @@
 body {
     margin: 0;
     background-image: url('tema-san-valentin-corazones-cielo-rosa_1308-38030.png');
-    background-size: cover; 
-    background-position: center; 
-    background-repeat: no-repeat; 
-    background-attachment: fixed; 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     transition: background-color 0.5s ease;
-    background-size: 120%;
-    animation: fanimado 45s infinite; 
+    animation: fanimado 45s infinite;
+    min-height: 100vh;
 }
 
 @keyframes animat {
