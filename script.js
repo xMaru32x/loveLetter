@@ -1,50 +1,72 @@
-document.querySelector('.heart').addEventListener('click', function() {
-    const xhr = new XMLHttpRequest();
-    xhr.open('GET', 'CartaParaLeslie.pdf', true);// Asegurate que sea el mismo nombre de tu carta, al nombre escrito en esta linea.
-    xhr.responseType = 'blob'; 
-    xhr.onload = function() {
-      if (xhr.status === 200) {
-        const blob = xhr.response;
+document.querySelector('.heart').addEventListener('click', async function() {
+    const targetDate = new Date('2025-01-01T00:00:00').getTime();
+    const currentDate = Date.now();
+
+    if (currentDate < targetDate) {
+        const modalContainer = document.getElementById('modal_container');
+        modalContainer.classList.add('show'); // Add 'show' class to display the modal
+        return;
+    }
+
+    try {
+        const response = await fetch('CartaParaLeslie.pdf'); // Usa fetch API
+
+        if (!response.ok) { // Verifica si la respuesta no es exitosa (códigos 2xx)
+            if (response.status === 404) {
+                console.error('Archivo no encontrado:', response.statusText);
+                alert("El archivo solicitado no se encuentra disponible. Por favor, inténtelo más tarde.");
+            } else {
+                console.error('Error al descargar el archivo:', response.status, response.statusText);
+                alert("Error al descargar el archivo. Por favor, inténtelo de nuevo más tarde.");
+            }
+            return; 
+        }
+
+        const blob = await response.blob(); 
         const link = document.createElement('a');
         link.href = window.URL.createObjectURL(blob);
-        link.download = 'CartaParaLeslie.pdf';// Nombre con el que se descarga la carta
+        link.download = 'CartaParaLeslie.pdf';
         link.click();
         window.URL.revokeObjectURL(link.href);
-      } else {
-        console.error('No se pudo descargar el archivo.');
-      }
-    };
-    xhr.send();
-  });
-
-  var savedCountdown = localStorage.getItem('countDownDate');
-  var countDownMinutes = 48; // Define el tiempo en horas para la cuenta regresiva
-  var countDownDate;
-  
-  if (!savedCountdown) {
-    countDownDate = new Date().getTime() + (countDownMinutes * 60 * 60 * 1000);
-    localStorage.setItem('countDownDate', countDownDate.toString());
-  } else {
-    countDownDate = parseInt(savedCountdown, 10);
-  }
-  
-  var x = setInterval(function() {
-    var now = new Date().getTime();
-    var distance = countDownDate - now;
-  
-    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-  
-    document.getElementById("countdown").textContent = `Nueva carta en: ${days}d ${hours}h ${minutes}m ${seconds}s`;
-  
-    localStorage.setItem('countDownDate', countDownDate.toString());
-    //localStorage.clear();
-    if (distance < 0) {
-      clearInterval(x); // Detiene el temporizador
-      document.getElementById("countdown").textContent = "¡Nueva carta disponible!";
-      //localStorage.removeItem('countDownDate'); // Limpia el almacenamiento si el tiempo ha expirado
+    } catch (error) {
+        console.error('Error de red al descargar el archivo:', error);
+        alert("Error de red. Por favor, compruebe su conexión a internet.");
     }
-  }, 1000);
+});
 
+function updateCountdown() {
+    let countDownDate = new Date('2025-01-01T00:00:00').getTime();
+    const now = Date.now();
+    const distance = countDownDate - now;
+
+    if (distance < 0) {
+        clearInterval(countdownInterval);
+        document.getElementById("countdown").textContent = "¡Nueva carta disponible!";
+        localStorage.removeItem('countDownDate');
+        return;
+    }
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    document.getElementById("countdown").textContent = `Nueva carta en: ${days}d ${hours}h ${minutes}m ${seconds}s`;
+    localStorage.setItem('countDownDate', countDownDate);
+}
+
+updateCountdown();
+let countdownInterval = setInterval(updateCountdown, 1000);
+
+const modal_container = document.getElementById('modal_container');
+const close = document.getElementById('close');
+
+close.addEventListener('click', () => {
+    modal_container.classList.remove('show');
+});
+
+window.onclick = function(event) {
+    if (event.target == modal_container) {
+        modal_container.classList.remove('show');
+    }
+};
