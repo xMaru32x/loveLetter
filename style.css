@@ -10,7 +10,13 @@ body {
     min-height: 100vh;
     min-height: 100vh;
 }
-
+.centered-container {
+  display: flex;
+  flex-direction: column; /* Alinea los elementos verticalmente */
+  justify-content: center; /* Centra verticalmente */
+  align-items: center;     /* Centra horizontalmente */
+  min-height: 100vh;
+}
 button {
     background-color: crimson;
     border: 0;
@@ -320,18 +326,18 @@ button {
   }
 
   #countdown {
-    font-family: 'Dancing Script', cursive;
+    font-family: 'Dancing Script', Impact, Haettenschweiler, 'Arial Narrow', sans-serif;
     color: rgb(20, 33, 220);
-    font-size: 30px;
+    font-size: 40px;
     text-align: center;
-    margin-top: -150px;
+    margin-top: -100px;
   }
   
-
   @media (max-width: 768px) {
     .wing {
         width: 100px;
         height: 40px;
+        margin-top: 20px;
     }
 
     .right {
@@ -346,7 +352,6 @@ button {
         width: 100px;
         height: 80px;
         margin-left: -40px;
-    }
 
     #envelope {
         width: 260px;
@@ -361,11 +366,11 @@ button {
     }
 
     #countdown {
-        font-size: 24px;
+        font-size: 60px;
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
     .wing {
         width: 80px;
         height: 30px;
@@ -382,8 +387,8 @@ button {
 
     .heart {
         width: 80px;
-        height: 60px;
-        margin-left: -30px;
+        height: 30%;
+        margin-left: -15px;
     }
 
     #envelope {
@@ -401,4 +406,5 @@ button {
     #countdown {
         font-size: 20px;
     }
+}
 }
