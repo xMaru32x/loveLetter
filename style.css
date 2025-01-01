@@ -301,7 +301,7 @@ button {
     max-width: 30px;
   }
   .contact .text-love {
-    color: rgb(20, 33, 220);
+    color: rgb(230, 103, 0);
     animation-duration: 1s;
     animation-name: heartBeat;
     animation-iteration-count: infinite;
@@ -319,7 +319,7 @@ button {
 
   #countdown {
     font-family: 'Dancing Script', Impact, Haettenschweiler, 'Arial Narrow', sans-serif;
-    color: rgb(20, 33, 220);
+    color: rgb(230, 103, 0);
     font-size: 40px;
     text-align: center;
     margin-top: -100px;
