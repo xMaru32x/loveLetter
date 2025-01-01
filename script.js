@@ -1,5 +1,5 @@
 document.querySelector('.heart').addEventListener('click', async function() {
-    const targetDate = new Date('2025-01-03T00:00:00').getTime();
+    const targetDate = new Date('2025-01-03T12:00:00').getTime();
     const currentDate = Date.now();
 
     if (currentDate < targetDate) {
@@ -35,7 +35,7 @@ document.querySelector('.heart').addEventListener('click', async function() {
 });
 
 function updateCountdown() {
-    let countDownDate = new Date('2025-01-03T00:00:00').getTime();
+    let countDownDate = new Date('2025-01-03T12:00:00').getTime();
     const now = Date.now();
     const distance = countDownDate - now;
 
