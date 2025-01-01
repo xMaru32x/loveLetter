@@ -12,9 +12,9 @@ body {
 }
 .centered-container {
   display: flex;
-  flex-direction: column; /* Alinea los elementos verticalmente */
-  justify-content: center; /* Centra verticalmente */
-  align-items: center;     /* Centra horizontalmente */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;   
   min-height: 100vh;
 }
 button {
