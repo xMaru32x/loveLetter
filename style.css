@@ -12,9 +12,9 @@ body {
 }
 .centered-container {
   display: flex;
-  flex-direction: column; /* Alinea los elementos verticalmente */
-  justify-content: center; /* Centra verticalmente */
-  align-items: center;     /* Centra horizontalmente */
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center;   
   min-height: 100vh;
 }
 button {
@@ -91,7 +91,7 @@ button {
     }
   }
 
-/* wings */
+
 
 .wing {
     background:white;
@@ -101,7 +101,6 @@ button {
      position:absolute;
 }
 
-/* right wing */
 
 .right {
     margin-left:-60px;
@@ -145,7 +144,6 @@ button {
     margin-top:66px;
 }
 
-/* left wing */
 
 .left {
     border-radius:12px 20px 20px 60px;
@@ -190,8 +188,6 @@ button {
      border-radius:0px 0px 70px 60px;
     margin-top:58px;
 }
-
-/* heart */
 
 .heart{
     position: absolute;
@@ -241,8 +237,6 @@ button {
     }
 }
 
-/* envelope */
-
   #envelope {
   background: white; 
   margin: 200px auto;
@@ -264,7 +258,6 @@ button {
     }
 }
 
-/* bottom, left, and right sides */
 .sides {
   border-color: transparent #fbfbfb #f7f7f7 #fcfcfc;
   border-style: solid;
@@ -275,8 +268,6 @@ button {
   position: absolute;
   width: 0;
 }
-
-/* top side */
 
 .top {
   border-color: white transparent transparent;

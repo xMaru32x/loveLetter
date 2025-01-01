@@ -1,17 +1,17 @@
 document.querySelector('.heart').addEventListener('click', async function() {
-    const targetDate = new Date('2025-01-01T00:00:00').getTime();
+    const targetDate = new Date('2025-01-03T00:00:00').getTime();
     const currentDate = Date.now();
 
     if (currentDate < targetDate) {
         const modalContainer = document.getElementById('modal_container');
-        modalContainer.classList.add('show'); // Add 'show' class to display the modal
+        modalContainer.classList.add('show'); 
         return;
     }
 
     try {
-        const response = await fetch('CartaParaLeslie.pdf'); // Usa fetch API
+        const response = await fetch('CartaParaLeslie.pdf'); 
 
-        if (!response.ok) { // Verifica si la respuesta no es exitosa (códigos 2xx)
+        if (!response.ok) { 
             if (response.status === 404) {
                 console.error('Archivo no encontrado:', response.statusText);
                 alert("El archivo solicitado no se encuentra disponible. Por favor, inténtelo más tarde.");
