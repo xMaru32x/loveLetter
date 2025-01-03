@@ -9,7 +9,7 @@ document.querySelector('.heart').addEventListener('click', async function() {
     }
 
     try {
-        const response = await fetch('CartaParaLeslie.pdf'); 
+        const response = await fetch('CartaParaLeslie2.pdf'); 
 
         if (!response.ok) { 
             if (response.status === 404) {
@@ -25,7 +25,7 @@ document.querySelector('.heart').addEventListener('click', async function() {
         const blob = await response.blob(); 
         const link = document.createElement('a');
         link.href = window.URL.createObjectURL(blob);
-        link.download = 'CartaParaLeslie.pdf';
+        link.download = 'CartaParaLeslie2.pdf';
         link.click();
         window.URL.revokeObjectURL(link.href);
     } catch (error) {
