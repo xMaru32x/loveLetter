@@ -4,13 +4,13 @@ document.querySelector('.heart').addEventListener('click', async function() {
 
     if (currentDate < targetDate) {
         const modalContainer = document.getElementById('modal_container');
-        modalContainer.classList.add('show'); 
+        modalContainer.classList.add('show');
         return;
     }
 
     try {
-        const response = await fetch('./Letters/CartaParaLeslie2.pdf'); 
-        if (!response.ok) { 
+        const response = await fetch('Letters/CartaParaLeslie2.pdf');
+        if (!response.ok) {
             if (response.status === 404) {
                 console.error('Archivo no encontrado:', response.statusText);
                 alert("El archivo solicitado no se encuentra disponible. Por favor, inténtelo más tarde.");
@@ -18,16 +18,18 @@ document.querySelector('.heart').addEventListener('click', async function() {
                 console.error('Error al descargar el archivo:', response.status, response.statusText);
                 alert("Error al descargar el archivo. Por favor, inténtelo de nuevo más tarde.");
             }
-            return; 
+            return;
         }
 
-        const blob = await response.blob(); 
+        const blob = await response.blob();
         const link = document.createElement('a');
         link.href = window.URL.createObjectURL(blob);
         link.download = 'CartaParaLeslieV2.pdf';
 
         link.click();
         window.URL.revokeObjectURL(link.href);
+        localStorage.setItem('newLetterAvailable', 'true');
+        
     } catch (error) {
         console.error('Error de red al descargar el archivo:', error);
         alert("Error de red. Por favor, compruebe su conexión a internet.");
@@ -35,13 +37,14 @@ document.querySelector('.heart').addEventListener('click', async function() {
 });
 
 function updateCountdown() {
-    let countDownDate = new Date('2025-01-03T12:00:00').getTime();
+    const countDownDate = new Date('2025-01-03T12:00:00').getTime();
     const now = Date.now();
     const distance = countDownDate - now;
 
     if (distance < 0) {
         clearInterval(countdownInterval);
         document.getElementById("countdown").textContent = "¡Nueva carta disponible!";
+        localStorage.setItem('newLetterAvailable', 'true'); 
         localStorage.removeItem('countDownDate');
         return;
     }
@@ -55,8 +58,12 @@ function updateCountdown() {
     localStorage.setItem('countDownDate', countDownDate);
 }
 
-updateCountdown();
-let countdownInterval = setInterval(updateCountdown, 1000);
+if (localStorage.getItem('newLetterAvailable') === 'true') {
+    document.getElementById("countdown").textContent = "¡Nueva carta disponible!";
+} else {
+    updateCountdown();
+    let countdownInterval = setInterval(updateCountdown, 1000);
+}
 
 const modal_container = document.getElementById('modal_container');
 const close = document.getElementById('close');
