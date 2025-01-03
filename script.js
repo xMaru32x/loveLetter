@@ -9,7 +9,7 @@ document.querySelector('.heart').addEventListener('click', async function() {
     }
 
     try {
-        const response = await fetch('./Letters/CartaParaLeslie2.pdf'); 
+        const response = await fetch('CartaParaLeslie2.pdf'); 
         if (!response.ok) { 
             if (response.status === 404) {
                 console.error('Archivo no encontrado:', response.statusText);
