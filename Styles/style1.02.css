@@ -1,3 +1,10 @@
+@font-face {
+    font-family: "Lobster"; 
+    src: url("../Fonts/Lobster-Regular.ttf") format("truetype");  /* Correcto para .ttf */
+    font-weight: normal; 
+    font-style: normal; 
+}
+
 body {
     margin: 0;
     background-image: url('../Backgrounds/bg3.png');
@@ -7,7 +14,6 @@ body {
     background-attachment: fixed;
     transition: background-color 0.5s ease;
     animation: fanimado 45s infinite;
-    min-height: 100vh;
     min-height: 100vh;
 }
 .centered-container {
@@ -301,6 +307,8 @@ button {
     max-width: 30px;
   }
   .contact .text-love {
+    font-family: "Lobster", sans-serif;
+    font-size: 50px;
     color: #ad20ff;;
     -webkit-text-stroke: 1px white;
     animation-duration: 1s;
@@ -319,10 +327,10 @@ button {
   }
 
   #countdown {
-    font-family: 'Dancing Script', Impact, Haettenschweiler, 'Arial Narrow', sans-serif;
+    font-family: "Lobster", sans-serif;
     color: #ad20ff;;
     -webkit-text-stroke: 1px white;
-    font-size: 40px;
+    font-size: 50px;
     text-align: center;
     margin-top: -100px;
   }
