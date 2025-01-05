@@ -14,7 +14,7 @@ body {
     background-attachment: fixed;
     transition: background-color 0.5s ease;
     animation: fanimado 45s infinite;
-    min-height: 100vh;
+    min-height: 50vh;
 }
 .centered-container {
   display: flex;
@@ -309,6 +309,7 @@ button {
 
   .contact .text-love {
     font-family: "Lobster", sans-serif;
+    font-size: 55px;
     color: #ad20ff;;
     -webkit-text-stroke: 1px white;
     animation-duration: 1s;
@@ -319,7 +320,6 @@ button {
     width: 80vw; 
     text-align: center; 
     align-self: center;
-    font-size: clamp(40px, 10vw, 90px);
   }
 
   @keyframes heartBeat {
@@ -333,6 +333,7 @@ button {
 
   #countdown {
     font-family: "Lobster", sans-serif;
+    font-size: 55px;
     color: #ad20ff;;
     -webkit-text-stroke: 1px white;
     text-align: center;
@@ -340,7 +341,6 @@ button {
     width: 80vw; 
     text-align: center; 
     align-self: center;
-    font-size: clamp(40px, 10vw, 90px);
   }
   
   @media (max-width: 768px) {
