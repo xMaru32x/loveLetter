@@ -306,9 +306,9 @@ button {
     height: 20px;
     max-width: 30px;
   }
+
   .contact .text-love {
     font-family: "Lobster", sans-serif;
-    font-size: 50px;
     color: #ad20ff;;
     -webkit-text-stroke: 1px white;
     animation-duration: 1s;
@@ -316,7 +316,12 @@ button {
     animation-iteration-count: infinite;
     animation-direction: alternate;
     margin: 0 0.5rem;
+    width: 80vw; 
+    text-align: center; 
+    align-self: center;
+    font-size: clamp(40px, 10vw, 90px);
   }
+
   @keyframes heartBeat {
     from {
       text-shadow: 0px 0px 15px crimson, 1px 1px 10px rgba(255, 255, 255, 0.1);
@@ -330,9 +335,12 @@ button {
     font-family: "Lobster", sans-serif;
     color: #ad20ff;;
     -webkit-text-stroke: 1px white;
-    font-size: 50px;
     text-align: center;
     margin-top: -100px;
+    width: 80vw; 
+    text-align: center; 
+    align-self: center;
+    font-size: clamp(40px, 10vw, 90px);
   }
   
   @media (max-width: 768px) {
