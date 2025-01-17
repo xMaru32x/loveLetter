@@ -1,7 +1,7 @@
 let countdownInterval;
 
 function checkCountdown() {
-  const targetDate = new Date("2025-01-10T00:00:00").getTime();
+  const targetDate = new Date("2025-01-19T00:00:00").getTime();
   const currentDate = Date.now();
 
   if (currentDate < targetDate) {
@@ -14,7 +14,7 @@ function checkCountdown() {
 }
 
 function updateCountdown() {
-  const countDownDate = new Date("2025-01-10T00:00:00").getTime();
+  const countDownDate = new Date("2025-01-19T00:00:00").getTime();
   const now = Date.now();
   const distance = countDownDate - now;
 
