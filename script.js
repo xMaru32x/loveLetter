@@ -36,7 +36,7 @@ function updateCountdown() {
 }
 
 document.querySelector(".heart").addEventListener("click", async function () {
-  const targetDate = new Date("2025-01-10T00:00:00").getTime();
+  const targetDate = new Date("2025-01-19T00:00:00").getTime(); // Fecha correcta
   const currentDate = Date.now();
 
   if (currentDate < targetDate) {
