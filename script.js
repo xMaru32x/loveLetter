@@ -47,7 +47,7 @@ document.querySelector(".heart").addEventListener("click", async function () {
   }
 
   try {
-    const response = await fetch("Letters/CartaParaLeslie5.pdf");
+    const response = await fetch("Letters/CartaParaLeslie5.1.pdf");
     if (!response.ok) {
       if (response.status === 404) {
         console.error("Archivo no encontrado:", response.statusText);
