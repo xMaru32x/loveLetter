@@ -1,0 +1,420 @@
+@font-face {
+    font-family: "Lobster"; 
+    src: url("../Fonts/Lobster-Regular.ttf") format("truetype");  /* Correcto para .ttf */
+    font-weight: normal; 
+    font-style: normal; 
+}
+
+body {
+    margin: 0;
+    background-image: url('../Backgrounds/bg6.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    transition: background-color 0.5s ease;
+    animation: fanimado 45s infinite;
+    min-height: 50vh;
+}
+.centered-container {
+  display: flex;
+  flex-direction: column; 
+  justify-content: center; 
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+}
+button {
+    background-color: crimson;
+    border: 0;
+    border-radius: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    font-size: 18px;
+    padding: 20px 50px;
+    margin-top: 20%;
+  }
+  
+  .modal-container {
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.3);
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    pointer-events: none;
+    opacity: 0;  
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    transition: opacity 0.3s ease;
+    z-index: 10; 
+  }
+  
+  .show {
+    pointer-events: auto;
+    opacity: 1;
+  }
+  
+  .modal {
+    background-color: #fff;
+    width: 300px;
+    max-width: 100%;
+    padding: 60px 35px;
+    border-radius: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    z-index: 11;
+  }
+  
+  .modal h1 {
+    margin: 0;
+    font-size: 45px;
+  }
+  
+  .modal p {
+    opacity: 0.7;
+    font-size: 25px;
+  }
+
+@keyframes animat {
+    0% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  @keyframes fanimado {
+    0% {
+      background-position: 0 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0 50%;
+    }
+  }
+
+
+
+.wing {
+    background:white;
+     border-radius: 12px 20px 60px 20px;
+     width:120px;
+     height:50px; margin-top:80px;
+     position:absolute;
+}
+
+
+.right {
+    margin-left:-60px;
+    left:50%;
+    animation:flap1 1s infinite;
+    border-bottom:3px solid rgba(0,0,0,.08);
+     border-radius: 12px 20px 60px 20px;
+    transform:rotate(-10deg) translate(250px,0);
+}
+
+@keyframes flap1 {
+    0% {
+        transform:rotate(-10deg) translate(250px,0);
+    }
+    
+    50% {
+        transform:rotate(-5deg) translate(250px,0);
+    }
+}
+.right:before {
+    position:absolute;
+    content:'';
+    background:white;
+    width:70%;
+    height:70%;
+       border-bottom:3px solid rgba(0,0,0,.08);
+    border-radius: 20px 20px 60px 20px;
+    transform:rotate(20deg) translate(-1px,0);
+    margin-top:38px;
+}
+
+.right:after {
+      position:absolute;
+    content:'';
+    background:white;
+    width:40%;
+    transform:rotate(29deg) translate(-8px,0);
+    height:30%;
+       border-bottom:3px solid rgba(0,0,0,.08);
+    border-radius: 0px 0px 60px 70px;
+    margin-top:66px;
+}
+
+
+.left {
+    border-radius:12px 20px 20px 60px;
+     margin-left:-60px;
+    left:50%;
+     animation:flap2 1s infinite;
+      border-bottom:3px solid rgba(0,0,0,.08);
+    transform:rotate(10deg) translate(-248px, 0);
+}
+
+@keyframes flap2 {
+    0% {
+        transform:rotate(10deg) translate(-248px,0);
+    }
+    
+    50% {
+        transform:rotate(5deg) translate(-248px,0);
+    }
+}
+
+
+.left:before {
+    position:absolute;
+    content:'';
+    background:white;
+    width:70%;
+       border-bottom:3px solid rgba(0,0,0,.08);
+    transform:translate(46%,0) rotate(-20deg);
+    height:60%;
+      border-radius:12px 20px 70px 70px;
+    margin-top:40px;
+}
+
+.left:after {
+      position:absolute;
+    content:'';
+    background:white;
+    width:40%;
+       border-bottom:3px solid rgba(0,0,0,.08);
+    height:30%;
+     transform:translate(164%,0) rotate(-34deg);
+     border-radius:0px 0px 70px 60px;
+    margin-top:58px;
+}
+
+.heart{
+    position: absolute;
+    width: 120px;
+    z-index:99999;
+    height: 100px;
+    margin-left:-50px;
+    left:50%;
+     animation: heart 1s infinite;
+    transform:scale(.8);
+    transition:.6s;
+    margin-top:60px;
+    z-index: 9;
+    
+}
+.heart:before,
+.heart:after{
+    content: "";
+    width: 50px;
+    height: 80px;
+    position: absolute;
+    left: 50px;
+    top: 0;
+    border-radius: 50px 50px 6px 6px;
+    cursor: pointer;
+    background: crimson;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+}
+.heart:after{
+    left: 0;
+    transform: rotate(45deg);
+    transform-origin :100% 100%;
+}
+
+@keyframes heart {
+    0% {
+        transform: scale(.8) translate(0,0);
+    }
+    
+    50% {
+        transform: scale(.92) translate(0, 12px);
+    }
+    
+    100% {
+        transform:scale(.8);
+    }
+}
+
+  #envelope {
+  background: white; 
+  margin: 200px auto;
+  height: 200px;
+  position: relative;
+  width: 320px;
+  border-radius:8px;
+  overflow:hidden;
+  animation: floaty 1s infinite;
+}
+
+@keyframes floaty {
+    0% {
+        transform:translate(0,0);
+    }
+    
+    50% {
+        transform:translate(0, 12px);
+    }
+}
+
+.sides {
+  border-color: transparent #fbfbfb #f7f7f7 #fcfcfc;
+  border-style: solid;
+  border-width: 90px 170px;
+  bottom: 0;
+  height: 0;
+  left: 0;
+  position: absolute;
+  width: 0;
+}
+
+.top {
+  border-color: white transparent transparent;
+  border-style: solid;
+  border-width: 108px 140px 90px 140px;
+  height: 0;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transform-origin: 50% 0;
+  width: 0;
+}
+
+
+.contact {
+    position: absolute;
+    cursor: pointer;
+    bottom: 1rem;
+    right: 1rem;
+    display: inline-block;
+    background: #fff;
+    padding: 1.5rem 1.25rem;
+    font-family: "Dank Mono", monospace;
+    border-radius: 3rem;
+    display: flex;
+    text-decoration: none;
+    align-items: center;
+    transition: all 1.5s ease-in-out;
+    height: 20px;
+    max-width: 30px;
+  }
+
+  .contact .text-love {
+    font-family: "Lobster", sans-serif;
+    font-size: 55px;
+    color:#c70095;
+    -webkit-text-stroke: 1px white;
+    animation-duration: 1s;
+    animation-name: heartBeat;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    margin: 0 0.5rem;
+    width: 80vw; 
+    text-align: center; 
+    align-self: center;
+  }
+
+  @keyframes heartBeat {
+    from {
+      text-shadow: 0px 0px 15px crimson, 1px 1px 10px rgba(255, 255, 255, 0.1);
+    }
+    to {
+      text-shadow: 0;
+    }
+  }
+
+  #countdown {
+    font-family: "Lobster", sans-serif;
+    font-size: 55px;
+    color: #c70095;
+    -webkit-text-stroke: 1px white;
+    text-align: center;
+    margin-top: -100px;
+    width: 80vw; 
+    text-align: center; 
+    align-self: center;
+  }
+  
+  @media (max-width: 768px) {
+    .wing {
+        width: 100px;
+        height: 40px;
+        margin-top: 20px;
+    }
+
+    .right {
+        transform: rotate(-10deg) translate(200px,0);
+    }
+
+    .left {
+        transform: rotate(10deg) translate(-200px, 0);
+    }
+
+    .heart {
+        width: 100px;
+        height: 80px;
+        margin-left: -40px;
+
+    #envelope {
+        width: 260px;
+        height: 160px;
+        margin: 150px auto;
+    }
+
+    .contact {
+        padding: 1rem;
+        font-size: 0.8rem;
+        max-width: 40px;
+    }
+
+    #countdown {
+        font-size: 60px;
+    }
+}
+
+@media (max-width: 600px) {
+    .wing {
+        width: 80px;
+        height: 30px;
+        margin-top: 60px;
+    }
+
+    .right {
+        transform: rotate(-10deg) translate(150px,0);
+    }
+
+    .left {
+        transform: rotate(10deg) translate(-150px, 0);
+    }
+
+    .heart {
+        width: 80px;
+        height: 30%;
+        margin-left: -15px;
+    }
+
+    #envelope {
+        width: 200px;
+        height: 140px;
+        margin: 100px auto;
+    }
+
+    .contact {
+        padding: 0.8rem;
+        font-size: 0.7rem;
+        max-width: 50px;
+    }
+
+    #countdown {
+        font-size: 20px;
+    }
+}
+}
