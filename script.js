@@ -47,7 +47,7 @@ document.querySelector(".heart").addEventListener("click", async function () {
   }
 
   try {
-    const response = await fetch("Letters/CartaParaLeslie5.1.pdf");
+    const response = await fetch("Letters/CartaParaLeslie6.pdf");
     if (!response.ok) {
       if (response.status === 404) {
         console.error("Archivo no encontrado:", response.statusText);
@@ -62,7 +62,7 @@ document.querySelector(".heart").addEventListener("click", async function () {
     const blob = await response.blob();
     const link = document.createElement("a");
     link.href = window.URL.createObjectURL(blob);
-    link.download = "CartaParaLeslieV5.pdf";
+    link.download = "CartaParaLeslieV6.pdf";
     link.click();
     window.URL.revokeObjectURL(link.href);
     localStorage.setItem("newLetterAvailable", "true");
