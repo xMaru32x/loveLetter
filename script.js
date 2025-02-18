@@ -1,7 +1,7 @@
 let countdownInterval;
 
 function checkCountdown() {
-  const targetDate = new Date("2025-02-14T15:30:00").getTime();
+  const targetDate = new Date("2025-02-19T00:00:00").getTime();
   const currentDate = Date.now();
 
   if (currentDate < targetDate) {
@@ -14,7 +14,7 @@ function checkCountdown() {
 }
 
 function updateCountdown() {
-  const countDownDate = new Date("2025-02-14T15:30:00").getTime();
+  const countDownDate = new Date("2025-02-19T00:00:00").getTime();
   const now = Date.now();
   const distance = countDownDate - now;
 
@@ -36,7 +36,7 @@ function updateCountdown() {
 }
 
 document.querySelector(".heart").addEventListener("click", async function () {
-  const targetDate = new Date("2025-02-14T15:30:00").getTime(); // Fecha correcta
+  const targetDate = new Date("2025-02-19T00:00:00").getTime(); // Fecha correcta
   const currentDate = Date.now();
 
   if (currentDate < targetDate) {
@@ -47,7 +47,7 @@ document.querySelector(".heart").addEventListener("click", async function () {
   }
 
   try {
-    const response = await fetch("Letters/CartaParaLeslie5.1.pdf");
+    const response = await fetch("Letters/CartaParaLeslie7.pdf");
     if (!response.ok) {
       if (response.status === 404) {
         console.error("Archivo no encontrado:", response.statusText);
@@ -62,7 +62,7 @@ document.querySelector(".heart").addEventListener("click", async function () {
     const blob = await response.blob();
     const link = document.createElement("a");
     link.href = window.URL.createObjectURL(blob);
-    link.download = "CartaParaLeslieV5.pdf";
+    link.download = "CartaParaLeslieV7.pdf";
     link.click();
     window.URL.revokeObjectURL(link.href);
     localStorage.setItem("newLetterAvailable", "true");
